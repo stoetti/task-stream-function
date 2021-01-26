@@ -10,9 +10,7 @@ import org.springframework.kafka.test.context.EmbeddedKafka;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(properties = {
-        "spring.cloud.stream.kafka.binder.brokers=PLAINTEXT://localhost:19092"
-})
+@SpringBootTest(properties = {"spring.cloud.stream.kafka.binder.brokers=PLAINTEXT://localhost:19092"})
 @EmbeddedKafka(partitions = 1, brokerProperties = {"listeners=PLAINTEXT://localhost:19092", "port=29092"})
 @EnableAutoConfiguration(exclude = TaskEventAutoConfiguration.class)
 class DemoApplicationTests {
